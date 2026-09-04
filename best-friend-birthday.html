@@ -1,0 +1,994 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Rafoqaaa!</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --night: #241527;
+    --night2: #3B2143;
+    --gold: #D9A441;
+    --gold-light: #F0CD84;
+    --coral: #F2748C;
+    --cream: #FFF8ED;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--night);
+    color: var(--cream);
+    overflow-x: hidden;
+}
+
+/* ================= BALLOONS ================= */
+
+#balloons {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -120px;
+    width: 36px;
+    height: 46px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: .55;
+    animation: rise linear infinite;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    width: 1px;
+    height: 22px;
+    background: rgba(255,255,255,.25);
+}
+
+.heart-particle {
+    position: absolute;
+    bottom: -60px;
+    color: var(--coral);
+    opacity: .6;
+    animation: rise linear infinite;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-55vh) translateX(20px) rotate(6deg);
+    }
+
+    100% {
+        transform: translateY(-115vh) translateX(-10px) rotate(-4deg);
+    }
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.25rem;
+}
+
+.eyebrow-hero {
+    font-size: 1.05rem;
+    color: var(--gold-light);
+    margin-bottom: .5rem;
+}
+
+.hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 9vw, 4.6rem);
+    color: var(--gold);
+    line-height: 1.2;
+    text-shadow: 0 4px 24px rgba(217,164,65,.35);
+}
+
+.hero p.sub {
+    max-width: 520px;
+    margin-top: 1.2rem;
+    font-size: 1.05rem;
+    color: #EFE3F2;
+    line-height: 1.9;
+}
+
+.hero p.remember {
+    max-width: 520px;
+    margin-top: 1.6rem;
+    font-size: 1rem;
+    color: var(--gold-light);
+    line-height: 1.9;
+    font-weight: 700;
+    border-top: 1px solid rgba(217,164,65,.3);
+    padding-top: 1.3rem;
+}
+
+/* ================= CAKE ================= */
+
+.candle-zone {
+    margin-top: 2.2rem;
+}
+
+.candle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+}
+
+.cake-emoji-btn {
+    font-size: 3.6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.35));
+    transition: transform .2s;
+}
+
+.cake-emoji-btn:active {
+    transform: scale(.92);
+}
+
+.candle-caption {
+    font-size: .85rem;
+    color: var(--gold-light);
+}
+
+.scroll-hint {
+    margin-top: 3rem;
+    font-size: .9rem;
+    color: var(--gold-light);
+    opacity: .8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+}
+
+.scroll-hint span {
+    animation: bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    position: relative;
+    z-index: 1;
+    padding: 5rem 1.25rem;
+}
+
+.section-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: .6rem;
+}
+
+.section-lead {
+    text-align: center;
+    color: #D9C7DC;
+    max-width: 560px;
+    margin: 0 auto 2.6rem;
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+/* ================= MUSIC ================= */
+
+.music-section {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.music-box {
+    max-width: 480px;
+    margin: 0 auto;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(217,164,65,.3);
+    border-radius: 20px;
+    padding: 1.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.music-title {
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.music-btn {
+    border: none;
+    background: var(--gold);
+    color: var(--night);
+    padding: .8rem 1.5rem;
+    border-radius: 30px;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: .2s;
+}
+
+.music-btn:hover {
+    transform: scale(1.04);
+}
+
+/* ================= SLIDESHOW ================= */
+
+.slideshow {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide-frame {
+    width: 100%;
+    background: #fff;
+    padding: .9rem .9rem 1.5rem;
+    box-shadow: 0 12px 26px rgba(0,0,0,.25);
+    border-radius: 3px;
+}
+
+.slide-media {
+    width: 100%;
+}
+
+.slide-frame img,
+.slide-frame video {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    background: #0e0a10;
+}
+
+.slide-frame video {
+    object-fit: contain;
+}
+
+.slide-caption {
+    text-align: center;
+    font-size: 1rem;
+    color: #5a4a5e;
+    margin-top: .9rem;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.slide-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-top: 1.4rem;
+}
+
+.slide-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #E4D5CB;
+    background: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--night2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s, background .15s;
+}
+
+.slide-btn:hover {
+    background: #FBEFD9;
+}
+
+.slide-btn:active {
+    transform: scale(.92);
+}
+
+.slide-counter {
+    font-size: .85rem;
+    color: var(--gold-light);
+    min-width: 70px;
+    text-align: center;
+}
+
+/* ================= WISHES ================= */
+
+.wishes {
+    padding-bottom: 7rem;
+}
+
+.wishes-box {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wishes-text {
+    color: #EFE3F2;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .slide-frame {
+        padding: .6rem .6rem 1.1rem;
+    }
+
+    section {
+        padding: 4rem 1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="balloons"></div>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <p class="eyebrow-hero">
+        Today is your day
+    </p>
+
+    <h1>
+        Happy Birthday Rafoqaaa!
+    </h1>
+
+    <p class="sub">
+        Happy birthday to one of the most special in our lives.
+        We're so grateful for having you!
+    </p>
+
+    <p class="remember">
+        REMEMBER! You're our best friend because you're the only one
+        who has the patience for all of us!!
+    </p>
+
+    <div class="candle-zone">
+
+        <div class="candle-wrap">
+
+            <button
+                class="cake-emoji-btn"
+                id="cakeBtn"
+                aria-label="Blow out the candle">
+                🎂
+                <span id="flame">🕯️</span>
+            </button>
+
+            <p class="candle-caption" id="candleCaption">
+                Tap the cake and make a wish
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="scroll-hint">
+        <span>↓</span>
+        scroll down
+    </div>
+
+</section>
+
+
+<!-- ================= MUSIC ================= -->
+
+<section class="music-section">
+
+    <div class="section-inner">
+
+
+        <div class="music-box">
+
+
+            <audio id="birthdaySong" src="birthday-song.mp3"></audio>
+
+            <button class="music-btn" id="musicBtn">
+                ▶ Play Music
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PHOTOS ================= -->
+
+<section class="gallery" id="gallery">
+
+    <div class="section-inner">
+
+        <h2 class="section-title">
+            ليتس جو تو سى ميموريزززززز
+        </h2>
+
+        <div class="slideshow">
+
+            <figure class="slide-frame">
+
+                <div
+                    class="slide-media"
+                    id="slideMedia">
+                </div>
+
+                <figcaption
+                    class="slide-caption"
+                    id="slideCaption">
+                </figcaption>
+
+            </figure>
+
+            <div class="slide-nav">
+
+                <button
+                    class="slide-btn"
+                    id="prevBtn"
+                    aria-label="Previous">
+                    ‹
+                </button>
+
+                <span
+                    class="slide-counter"
+                    id="slideCounter">
+                </span>
+
+                <button
+                    class="slide-btn"
+                    id="nextBtn"
+                    aria-label="Next">
+                    ›
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WISHES ================= -->
+
+<section class="wishes" id="wishes">
+
+    <div class="section-inner">
+
+        <div class="wishes-box">
+
+            <h2 class="section-title">
+                نفسى تكونى اتبسطى بالميموريظ
+                ومش عايزاكى تكونى متضايقة يا رفوقة
+                بحبككككككك من هنا للسنة الجاية
+            </h2>
+
+            <p class="section-lead">
+                هروق عليكى انتظرينىىى بقولك.
+            </p>
+
+            <p class="wishes-text">
+                Thank you for being there for us,
+                Here's to another year of beautiful memories together.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ============================================================
+   PHOTOS
+============================================================ */
+
+const PHOTOS = [
+
+    { src: "photo1.jpg", caption: "I LOVE YOU!" },
+
+    { src: "photo2.jpg", caption: "U are the closest one to all of us!" },
+
+    { src: "photo3.jpg", caption: "صورة مع بوشا عشان بتحبيه واكيد بتحبينى" },
+
+    { src: "photo4.jpg", caption: "the only one who can always change my mood" },
+
+    { src: "photo13.jpg", caption: "and my mind" },
+
+    { src: "photo5.jpg", caption: "The most supportive person we have" },
+
+    { src: "photo6.jpg", caption: "سنتين كيهك سوا عالتوازى" },
+
+    { src: "photo7.jpg", caption: "❤️" },
+
+    { src: "photo8.jpg", caption: "monkey character" },
+
+    { src: "photo9.jpg", caption: "the only one who can always be there for us" },
+
+    { src: "photo10.jpg", caption: "اوجد الاختلاف بين الثلاث صور القادمة" },
+
+    { src: "photo11.jpg", caption: "؟" },
+
+    { src: "photo12.jpg", caption: "انا وانت الحاجة الثابتة😎" },
+
+    { src: "photo14.jpg", caption: "بقلب فالدفاتر" },
+
+    { src: "photo15.jpg", caption: "مش هيعرف يشيلنى حلو زيك كدة" },
+
+    { src: "photo16.jpg", caption: "اخر مرة نبيل دخلت فيها الكنيسة" },
+
+    { src: "photo17.jpg", caption: "الخلوات اللى بنطلعها على قفا العيال بتبقى حلوة" },
+
+    { src: "photo18.jpg", caption: "هتعقل انشاءالله" },
+
+    { src: "photo32.jpg", caption: "باين الحب؟" },
+
+    { src: "photo19.jpg", caption: "عقبالك" },
+
+    { src: "photo20.jpg", caption: "اثبات اننا نعرف بعض من زمان" },
+
+    { src: "photo33.jpg", caption: "اكتر صورة كيوت لينا" },
+
+    { src: "photo34.jpg", caption: "قبل مسافر وبتدعمينى" },
+
+    { src: "photo36.jpg", caption: "معندناش بيوت نقعد فيها باين" },
+
+    { src: "photo21.jpg", caption: "وكان الله بالسر عليم😂" },
+
+    { src: "photo22.jpg", caption: "بحب الصورة دى اوى عموما فحطيتها انا المديرة هنا" },
+
+    { src: "photo23.jpg", caption: "اليوم دة كان مختلف برضو" },
+
+    { src: "photo24.jpg", caption: "ملايكة يا ناس" },
+
+    { src: "photo25.jpg", caption: "اليوم دة لو نسياه هبوظ كل دة عمتا" },
+
+    { src: "photo26.jpg", caption: "Free therapy عالسطوح" },
+
+    { src: "photo27.jpg", caption: "❤️" },
+
+    { src: "photo35.jpg", caption: "صورة نضيفة" },
+
+    { src: "photo28.jpg", caption: "حاسة انك عايزة تخلصى منى بس معنديش دليل" },
+
+    { src: "photo38.jpg", caption: "مايفن العايقةة" },
+
+    { src: "photo39.jpg", caption: " مالها الكابلات يبنت الجبالى" },
+    { src: "photo42.jpg", caption: "👍" },
+    { src: "photo43.jpg", caption: "🫂" },
+    { src: "photo43.jpg", caption: "السداسى" },
+
+    { src: "photo29.jpg", caption: "اخر مرة خرجنا كلنا😂" },
+
+    { src: "photo37.jpg", caption: "المرة الوحيدة اللى خرجنا فيها كلنا*" },
+
+    { src: "photo30.jpg", caption: "شكرا على كل حاجة🥺" },
+
+    { src: "photo40.jpg", caption: "😝" },
+
+    { src: "photo31.jpg", caption: "💋" }
+
+];
+
+
+/* ============================================================
+   VIDEOS
+============================================================ */
+
+const VIDEOS = [
+
+    { src: "video1.mp4", caption: "انا ولا هو هنلففك ف فرحك؟" },
+
+    { src: "video2.mp4", caption: "اروق خروجة عموما" },
+
+    { src: "video3.mp4", caption: "فقرتك المفضلة" },
+
+    { src: "video4.mp4", caption: "فقرتنا المفضلة" },
+
+    { src: "video5.mp4", caption: "دة احنا مبسوطين جدًا" },
+
+    { src: "video6.mp4", caption: "يبخت الاطرش" },
+
+    { src: "video7.mp4", caption: "هو اللى ماكلنا" },
+
+    { src: "video11.mp4", caption: "عايزين يوم زى دى عموما" },
+
+    { src: "video8.mp4", caption: "مالارشيف دة" },
+
+    { src: "video9.mp4", caption: "متتقمصيش انهاردة ومش هقولك اكتر حد قماص تانى" },
+
+    { src: "video10.mp4", caption: "take a look back🤓" }
+
+];
+
+
+/* ============================================================
+   COMBINE PHOTOS + VIDEOS
+============================================================ */
+
+const MEDIA = (() => {
+
+    const photoItems = PHOTOS.map(p => ({
+        type: "photo",
+        src: p.src,
+        caption: p.caption
+    }));
+
+    const videoItems = VIDEOS.map(v => ({
+        type: "video",
+        src: v.src,
+        caption: v.caption
+    }));
+
+    const video3 = videoItems.find(v => v.src === "video3.mp4");
+    const video4 = videoItems.find(v => v.src === "video4.mp4");
+
+    /* Remove video3 and video4 from normal distribution */
+    const videosToMix = videoItems.filter(v =>
+        v.src !== "video3.mp4" &&
+        v.src !== "video4.mp4"
+    );
+
+    const result = [];
+    let videoIndex = 0;
+
+    /* Mix all other videos with photos */
+
+    photoItems.forEach((photo, index) => {
+
+        result.push(photo);
+
+        const videosShouldBeAdded = Math.floor(
+            ((index + 1) * videosToMix.length) /
+            photoItems.length
+        );
+
+        while (
+            videoIndex < videosShouldBeAdded &&
+            videoIndex < videosToMix.length
+        ) {
+
+            result.push(videosToMix[videoIndex]);
+
+            videoIndex++;
+        }
+
+    });
+
+    /* Add any remaining videos */
+
+    while (videoIndex < videosToMix.length) {
+
+        result.push(videosToMix[videoIndex]);
+
+        videoIndex++;
+
+    }
+
+    /*
+       Put video3 + video4 together exactly in the middle
+    */
+
+    const middlePosition = Math.floor(result.length / 2);
+
+    result.splice(
+        middlePosition,
+        0,
+        video3,
+        video4
+    );
+
+    return result;
+
+})();
+/* ============================================================
+   SLIDESHOW
+============================================================ */
+
+let currentSlide = 0;
+
+function showSlide(index) {
+
+    if (!MEDIA.length) return;
+
+    currentSlide =
+        (index + MEDIA.length) % MEDIA.length;
+
+    const item = MEDIA[currentSlide];
+
+    const media =
+        document.getElementById("slideMedia");
+
+    media.innerHTML = "";
+
+    if (item.type === "video") {
+
+        const video =
+            document.createElement("video");
+
+        video.src = item.src;
+        video.controls = true;
+        video.preload = "metadata";
+
+        media.appendChild(video);
+
+    } else {
+
+        const img =
+            document.createElement("img");
+
+        img.src = item.src;
+        img.alt = item.caption || "";
+
+        img.onerror = function () {
+
+            this.onerror = null;
+
+            this.src =
+                "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600&q=60";
+
+        };
+
+        media.appendChild(img);
+    }
+
+    document.getElementById("slideCaption")
+        .textContent = item.caption || "";
+
+    document.getElementById("slideCounter")
+        .textContent =
+        (currentSlide + 1) +
+        " / " +
+        MEDIA.length;
+}
+
+
+document.getElementById("prevBtn")
+    .addEventListener("click", () => {
+
+        showSlide(currentSlide - 1);
+
+    });
+
+
+document.getElementById("nextBtn")
+    .addEventListener("click", () => {
+
+        showSlide(currentSlide + 1);
+
+    });
+
+
+/* ============================================================
+   BALLOONS
+============================================================ */
+
+function makeBalloons() {
+
+    const colors = [
+        "#D9A441",
+        "#F2748C",
+        "#F0CD84",
+        "#8E6B9A"
+    ];
+
+    const wrap =
+        document.getElementById("balloons");
+
+    for (let i = 0; i < 10; i++) {
+
+        const balloon =
+            document.createElement("div");
+
+        balloon.className = "balloon";
+
+        balloon.style.left =
+            (Math.random() * 100) + "vw";
+
+        balloon.style.background =
+            colors[i % colors.length];
+
+        balloon.style.animationDuration =
+            (14 + Math.random() * 10) + "s";
+
+        balloon.style.animationDelay =
+            (Math.random() * 14) + "s";
+
+        wrap.appendChild(balloon);
+    }
+
+
+    for (let i = 0; i < 10; i++) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "heart-particle";
+
+        heart.textContent = "♥";
+
+        heart.style.left =
+            (Math.random() * 100) + "vw";
+
+        heart.style.fontSize =
+            (16 + Math.random() * 14) + "px";
+
+        heart.style.animationDuration =
+            (12 + Math.random() * 10) + "s";
+
+        heart.style.animationDelay =
+            (Math.random() * 14) + "s";
+
+        wrap.appendChild(heart);
+    }
+}
+
+
+/* ============================================================
+   CANDLE
+============================================================ */
+
+let candleLit = true;
+
+document.getElementById("cakeBtn")
+    .addEventListener("click", () => {
+
+        const flame =
+            document.getElementById("flame");
+
+        const caption =
+            document.getElementById("candleCaption");
+
+        candleLit = !candleLit;
+
+        if (candleLit) {
+
+            flame.style.opacity = "1";
+
+            flame.textContent = "🕯️";
+
+            caption.textContent =
+                "Tap the cake and make a wish";
+
+        } else {
+
+            flame.style.opacity = ".35";
+
+            flame.textContent = "💨";
+
+            caption.textContent =
+                "Make a wish 🌟";
+
+        }
+
+    });
+
+
+/* ============================================================
+   MUSIC
+============================================================ */
+
+const song =
+    document.getElementById("birthdaySong");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+
+musicBtn.addEventListener("click", () => {
+
+    if (song.paused) {
+
+        song.play();
+
+        musicBtn.textContent =
+            "❚❚ Pause Music";
+
+    } else {
+
+        song.pause();
+
+        musicBtn.textContent =
+            "▶ Play Music";
+
+    }
+
+});
+
+
+song.addEventListener("ended", () => {
+
+    musicBtn.textContent =
+        "▶ Play Music";
+
+});
+
+
+/* ============================================================
+   START
+============================================================ */
+
+showSlide(0);
+
+makeBalloons();
+
+</script>
+
+</body>
+</html>
